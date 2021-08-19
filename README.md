@@ -1,29 +1,19 @@
 # kf_portfolio
 
+Vue.js project for the future https://killianfaulkner.com
+
 ## Project setup
 ```
+git clone git@github.com:Alextopher/kf_portfolio.git
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Run local development server
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
+## Fix formatting
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
