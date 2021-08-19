@@ -40,12 +40,13 @@ export default defineComponent({
 
     a {
       display: inline-flex;
-      height: 90%;
+      height: 95%;
       cursor: pointer;
       justify-content: center;
 
       img {
         height: 100%;
+        background: gray;
       }
     }
   }

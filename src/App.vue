@@ -1,13 +1,14 @@
 <template>
-  <div>
-    <image-modal class="modal" @close="modal=''" v-if="modal" :image="modal" />
+  <div ref='site'>
     <navbar />
     <div class="content">
-      <viewable-image @click="show(require('@/assets/monkey.jpg'))"
+      <viewable-image @click="show(require('@/assets/monkey.jpg'))" v-for="i in [1]*10" :key="i"
         :preview="require('@/assets/monkey.jpg?width=200')" 
         :full="require('@/assets/monkey.jpg')"
       />
     </div>
+
+    <image-modal class="modal" @close="close()" v-if="modal" :image="modal" />
   </div>
 </template>
 
@@ -30,14 +31,21 @@ export default defineComponent({
   },
   methods: {
     show(img: string) {
+      let body = (this.$refs['site'] as HTMLElement).parentElement!;
+      body.style.overflow = 'hidden auto'
       this.modal = img;
     },
+    close() {
+      let body = (this.$refs['site'] as HTMLElement).parentElement!;
+      body.style.overflow = 'hiden'
+      this.modal = '';
+    }
   },
 });
 </script>
 
 <style lang="scss">
-html body {
+body {
   overflow-x: hidden;
   margin: 0;
 }
@@ -54,16 +62,15 @@ html body {
 
 <style lang="scss" scoped>
 .content {
-  margin-top: 80px;
+  margin: 18px;
 }
 
 .modal {
   position: fixed;
-  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);

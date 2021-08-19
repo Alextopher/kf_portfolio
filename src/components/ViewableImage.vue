@@ -17,6 +17,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+div {
+  display: inline-flex;
+  padding: 10px;
+}
+
 .preview {
   cursor: pointer;
 }

@@ -42,7 +42,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 #nav {
   width: 100%;
-  height: 64px;
+  height: 80px;
   margin: 0px;
 
   display: flex;
@@ -74,6 +74,7 @@ export default defineComponent({
 
       &.active {
         color: whitesmoke;
+        font-weight: bold;
       }
     }
   }
