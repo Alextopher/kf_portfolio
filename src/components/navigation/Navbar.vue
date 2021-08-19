@@ -38,7 +38,7 @@ export default defineComponent({
   },
 });
 </script>
-
+ 
 <style lang="scss" scoped>
 #nav {
   width: 100%;
