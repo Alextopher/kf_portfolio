@@ -1,14 +1,35 @@
 <template>
-  <navbar />
+  <div>
+    <image-modal class="modal" @close="modal=''" v-if="modal" :image="modal" />
+    <navbar />
+    <div class="body">
+      <div @click="show(require('@/assets/monkey.jpg'))">
+        <img :src="require('@/assets/monkey.jpg?width=200')" />
+        <img :src="require('@/assets/monkey.jpg')" style="display: none;" loading="lazy">
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Navbar from "./components/navigation/Navbar.vue";
+import Navbar from "./components/Navbar.vue";
+import ImageModal from "./components/ImageModal.vue";
 
 export default defineComponent({
   components: {
     Navbar,
+    ImageModal,
+  },
+  data: () => {
+    return {
+      modal: "",
+    };
+  },
+  methods: {
+    show(img: string) {
+      this.modal = img;
+    },
   },
 });
 </script>
@@ -25,5 +46,23 @@ html body {
   color: #2c3e50;
   width: 100vw;
   height: 100vh;
+}
+</style>
+
+<style lang="scss" scoped>
+.body {
+  margin-top: 80px;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 </style>
