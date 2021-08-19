@@ -34,8 +34,8 @@ export default defineComponent({
   computed: {
     path() {
       return this.$route.path;
-    }
-  }
+    },
+  },
 });
 </script>
 
