@@ -1,6 +1,10 @@
 <template>
   <div class="modal" @click="$emit('close')">
-    <img :src="image" :alt="image" @click="kill" />
+    <div>
+      <a :href="image" target="_blank" ref="noopener noreferrer">
+        <img :src="image" :alt="image" @click="kill" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -12,13 +16,12 @@ export default defineComponent({
     image: String,
   },
   methods: {
-    kill (e: MouseEvent) {
-      e.preventDefault();
+    kill(e: MouseEvent) {
       e.stopPropagation();
       e.stopImmediatePropagation();
       return false;
-    }
-  }
+    },
+  },
 });
 </script>
 
@@ -28,11 +31,23 @@ export default defineComponent({
   height: 100vw;
   background: gray;
 
-  img {
-    display: block;
-    margin: auto;
-    margin-top: 5%;
-    height: 80%;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    a {
+      display: inline-flex;
+      height: 90%;
+      cursor: pointer;
+      justify-content: center;
+
+      img {
+        height: 100%;
+      }
+    }
   }
 }
 </style>

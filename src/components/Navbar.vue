@@ -44,9 +44,6 @@ export default defineComponent({
   width: 100%;
   height: 64px;
   margin: 0px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
 
   display: flex;
   flex-flow: row nowrap;

@@ -1,5 +1,5 @@
-const defaultFileLoaderOptionsGenerator =
-  require("webpack-image-resize-loader/dist/index").defaultFileLoaderOptionsGenerator;
+const resize = require("webpack-image-resize-loader/dist/index");
+const generator = resize.defaultFileLoaderOptionsGenerator;
 
 module.exports = {
   publicPath: ".",
@@ -11,16 +11,13 @@ module.exports = {
       .loader("webpack-image-resize-loader")
       .options({
         fileLoader: "url-loader",
-        fileLoaderOptionsGenerator: (options, existingOptions) => ({
-          ...existingOptions,
-          fallback: {
-            ...existingOptions.fallback,
-            options: defaultFileLoaderOptionsGenerator(
-              options,
-              existingOptions.fallback.options
-            ),
-          },
-        }),
+        // fileLoaderOptionsGenerator: (options, existingOptions) => ({
+        //   ...existingOptions,
+        //   fallback: {
+        //     ...existingOptions.fallback,
+        //     options: generator(options, existingOptions.fallback.options),
+        //   },
+        // }),
       });
   },
 };

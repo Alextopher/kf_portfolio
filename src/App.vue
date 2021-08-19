@@ -2,11 +2,11 @@
   <div>
     <image-modal class="modal" @close="modal=''" v-if="modal" :image="modal" />
     <navbar />
-    <div class="body">
-      <div @click="show(require('@/assets/monkey.jpg'))">
-        <img :src="require('@/assets/monkey.jpg?width=200')" />
-        <img :src="require('@/assets/monkey.jpg')" style="display: none;" loading="lazy">
-      </div>
+    <div class="content">
+      <viewable-image @click="show(require('@/assets/monkey.jpg'))"
+        :preview="require('@/assets/monkey.jpg?width=200')" 
+        :full="require('@/assets/monkey.jpg')"
+      />
     </div>
   </div>
 </template>
@@ -15,11 +15,13 @@
 import { defineComponent } from "vue";
 import Navbar from "./components/Navbar.vue";
 import ImageModal from "./components/ImageModal.vue";
+import ViewableImage from "./components/ViewableImage.vue";
 
 export default defineComponent({
   components: {
     Navbar,
     ImageModal,
+    ViewableImage,
   },
   data: () => {
     return {
@@ -37,6 +39,7 @@ export default defineComponent({
 <style lang="scss">
 html body {
   overflow-x: hidden;
+  margin: 0;
 }
 
 #app {
@@ -50,7 +53,7 @@ html body {
 </style>
 
 <style lang="scss" scoped>
-.body {
+.content {
   margin-top: 80px;
 }
 
