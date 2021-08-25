@@ -17,16 +17,20 @@ export default defineComponent({
     return {
       links: [
         {
-          name: "hello",
-          href: "/hello",
+          name: "home",
+          href: "/",
         },
         {
-          name: "world",
-          href: "/world",
+          name: "portfolio",
+          href: "/portfolio",
         },
         {
-          name: "test",
-          href: "/test",
+          name: "resumè",
+          href: "/resume",
+        },
+        {
+          name: "contact",
+          href: "/contact",
         },
       ],
     };

@@ -1,11 +1,8 @@
 <template>
-  <div ref='site'>
+  <div ref="site">
     <navbar />
     <div class="content">
-      <viewable-image @click="show(require('@/assets/monkey.jpg'))" v-for="i in [1]*10" :key="i"
-        :preview="require('@/assets/monkey.jpg?width=200')" 
-        :full="require('@/assets/monkey.jpg')"
-      />
+      <router-view />
     </div>
 
     <image-modal class="modal" @close="close()" v-if="modal" :image="modal" />
@@ -16,13 +13,11 @@
 import { defineComponent } from "vue";
 import Navbar from "./components/Navbar.vue";
 import ImageModal from "./components/ImageModal.vue";
-import ViewableImage from "./components/ViewableImage.vue";
 
 export default defineComponent({
   components: {
     Navbar,
     ImageModal,
-    ViewableImage,
   },
   data: () => {
     return {
@@ -31,15 +26,15 @@ export default defineComponent({
   },
   methods: {
     show(img: string) {
-      let body = (this.$refs['site'] as HTMLElement).parentElement!;
-      body.style.overflow = 'hidden auto'
+      let body = (this.$refs["site"] as HTMLElement).parentElement!;
+      body.style.overflow = "hidden auto";
       this.modal = img;
     },
     close() {
-      let body = (this.$refs['site'] as HTMLElement).parentElement!;
-      body.style.overflow = 'hiden'
-      this.modal = '';
-    }
+      let body = (this.$refs["site"] as HTMLElement).parentElement!;
+      body.style.overflow = "hiden";
+      this.modal = "";
+    },
   },
 });
 </script>
@@ -72,7 +67,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 </style>
