@@ -1,7 +1,7 @@
 <template>
   <div>Portolio</div>
   <viewable-image
-    @click="show(require('@/assets/monkey.jpg'))"
+    @click="$emit('show', require('@/assets/monkey.jpg'))"
     v-for="i in [1] * 10"
     :key="i"
     :preview="require('@/assets/monkey.jpg?width=200')"

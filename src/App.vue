@@ -2,7 +2,7 @@
   <div ref="site">
     <navbar />
     <div class="content">
-      <router-view />
+      <router-view @show="show" />
     </div>
 
     <image-modal class="modal" @close="close()" v-if="modal" :image="modal" />
