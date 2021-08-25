@@ -26,11 +26,13 @@ export default defineComponent({
   },
   methods: {
     show(img: string) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       let body = (this.$refs["site"] as HTMLElement).parentElement!;
       body.style.overflow = "hidden auto";
       this.modal = img;
     },
     close() {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       let body = (this.$refs["site"] as HTMLElement).parentElement!;
       body.style.overflow = "hiden";
       this.modal = "";
