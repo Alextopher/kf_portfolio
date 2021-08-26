@@ -10,15 +10,14 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   props: {
-    preview: String,
-    full: String,
+    preview: { type: String, required: true },
+    full: { type: String, required: true },
   },
 });
 </script>
 
 <style lang="scss" scoped>
 div {
-  display: inline-flex;
   padding: 10px;
 }
 
