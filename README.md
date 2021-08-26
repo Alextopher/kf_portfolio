@@ -5,6 +5,7 @@ Vue.js project for the future https://killianfaulkner.com
 ## Project setup
 ```
 git clone git@github.com:Alextopher/kf_portfolio.git
+cd kf_portfolio
 npm install
 ```
 
