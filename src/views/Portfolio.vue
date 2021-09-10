@@ -1,5 +1,4 @@
 <template>
-  <div>Portolio</div>
   <image-gallery>
     <viewable-image
       @click="$emit('show', require('@/assets/monkey.jpg'))"

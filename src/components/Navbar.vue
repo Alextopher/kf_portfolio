@@ -2,7 +2,14 @@
   <ul id="nav">
     <b class="logo"> LOGO </b>
     <li v-for="link of links" :key="link">
-      <router-link :to="link.href" :class="{ active: path == link.href }">
+      <a v-if="link.atag == true" :href="link.href">
+        {{ link.name }}
+      </a>
+      <router-link
+        v-else
+        :to="link.href"
+        :class="{ active: path == link.href }"
+      >
         {{ link.name }}
       </router-link>
     </li>
@@ -26,7 +33,8 @@ export default defineComponent({
         },
         {
           name: "resumè",
-          href: "/resume",
+          href: "/chris_resume.pdf",
+          atag: true,
         },
         {
           name: "contact",
