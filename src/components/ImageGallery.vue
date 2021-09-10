@@ -31,7 +31,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 </style>
